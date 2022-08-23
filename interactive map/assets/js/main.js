@@ -19,13 +19,13 @@ fetch("parts/footer.html")
 
 
 // Animate with barba.js // --------------------------------------------------
-barba.init({
+/* barba.init({
     schema: {
         prefix: 'data-custom',
         wrapper: 'wrap'
       }
 })
-
+ */
 // Leaflet.js // -------------------------------------------------------------
 
 
