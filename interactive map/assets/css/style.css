@@ -8,9 +8,9 @@
 }
 
 :root {
-  --primary-color: #7fffd4;
+  --primary-color: #d8f7f7;
   --secondary-color: #f0ffff;
-  --alternative-color: #b456ae;
+  --alternative-color: #131d12;
 }
 
 h1,
@@ -45,8 +45,9 @@ header {
   top: 0;
 }
 .logo {
-  font-family: "Lobster", cursive;
+  font-family: 'Rubik Dirt', cursive;
   font-size: 2rem;
+  text-shadow: #000;
   color: var(--alternative-color);
 }
 nav {
@@ -91,7 +92,7 @@ footer {
 
 /* Content */
 .app_view {
-  padding: 1em;
+  padding: .5em;
 }
 .app_view_name {
   /* position: absolute; */
@@ -123,8 +124,8 @@ footer {
   background-color: var(--alternative-color);
 }
 #map {
-  height: 60vh;
-  width: 70vw;
+  height: 65vh;
+  width: 75vw;
 }
 #starred {
   background-color: #ffffff;
