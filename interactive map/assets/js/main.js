@@ -28,7 +28,9 @@ fetch("parts/footer.html")
   async function getMarker() {
     const response = await fetch('server/display.php');
     console.log(response);
-    const places = await response(); 
+    const places = await response();
+    
+    // document.getElementById('ocean').src = URL.createObjectURL(blob); 
   }
 
   getMarker()
