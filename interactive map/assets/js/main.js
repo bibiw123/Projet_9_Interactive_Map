@@ -35,9 +35,11 @@ let marker = L.marker([48.8534, 2.3488]).addTo(map);
 let clickMarker;
 let form =
   "<form action='#' method='post'>" +
-  "<input type='text' id='name' name= 'name' placeholder='lieu'>" +
-  "<br><br><input type='text' id='type' name= 'name' placeholder='genre'>" +
-  "<br><br><textarea id='msg' name='message' placeholder='Commentaire'></textarea>" +
+  "<input type='text' id='name' name= 'name' placeholder='Nom'>" +
+  "<br><br><input type='text' id='adress' name= 'adress' placeholder='Adresse'>" +
+  "<br><br><input type='text' id='image' name= 'image' placeholder='Image'>"+
+  "<br><br><input type='text' id='city' name= 'city' placeholder='Ville'>"+
+  "<br><br><input type='text' id='link' name= 'link' placeholder='Lien'>"+
   "<br><input id='lon' name= 'longitude' placeholder='longitude' type='hidden'>" +
   "<br><input id='lat' name= 'latitude' placeholder='latitude' type='hidden'>" +
   "<button>Envoyer</button>" +
