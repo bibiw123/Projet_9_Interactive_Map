@@ -15,6 +15,43 @@ fetch("parts/footer.html")
     document.querySelector("footer").innerHTML = data;
   });
 
+  // fetch("server/display.php")
+  // .then((response) => {
+  //   return response.text();
+  // })
+  // .then((data) => {
+  //   document.querySelector("map").innerHTML = data;
+  // });
+
+
+
+  async function getMarker() {
+    const response = await fetch('server/display.php');
+    console.log(response);
+    const places = await response(); 
+  }
+
+  getMarker()
+  .then(reponse => {
+      console.log('yay !');
+  })
+  .catch(error => {
+      console.log('error !');
+      console.log(error);
+  });
+
+
+//   fetch('./insertData.php',{
+//     method: 'POST',
+//     body: JSON.stringify(value),
+//     headers: {
+//         "Content-Type": "application/json; charset=UTF-8"
+//     }
+// })
+// .then((response)=> console.log(response.json()))
+// .then((data)=> console.log(data))
+
+
 // Animate with barba.js // --------------------------------------------------
 /* barba.init({
     schema: {
@@ -34,13 +71,15 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 let marker = L.marker([48.8534, 2.3488]).addTo(map);
 let clickMarker;
 let form =
-  "<form action='#' method='post'>" +
-  "<input type='text' id='name' name= 'name' placeholder='lieu'>" +
-  "<br><br><input type='text' id='type' name= 'name' placeholder='genre'>" +
-  "<br><br><textarea id='msg' name='message' placeholder='Commentaire'></textarea>" +
+  "<form action='add.php' method='post'>" +
+  "<input type='text' id='name' name= 'name' placeholder='nom'>" +
+  "<input type='text' id='adress' name= 'adress' placeholder='adresse'>" +
+  "<br><br><input type='text' id='image' name= 'image' placeholder='image url'>" +
+  "<br><br><input type='text' id='city' name= 'city' placeholder='ville'>" +
+  "<br><br><input type='text' id='category' name= 'category' placeholder='categorie'>" +
   "<br><input id='lon' name= 'longitude' placeholder='longitude' type='hidden'>" +
   "<br><input id='lat' name= 'latitude' placeholder='latitude' type='hidden'>" +
-  "<button>Envoyer</button>" +
+  "<button>Ajouter</button>" +
   "</form>";
 
 let circle = L.circle([48.8534, 2.3488], {
