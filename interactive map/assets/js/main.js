@@ -15,32 +15,30 @@ fetch("parts/footer.html")
     document.querySelector("footer").innerHTML = data;
   });
 
-  // fetch("server/display.php")
-  // .then((response) => {
-  //   return response.text();
+
+  // fetch(url)
+  // .then(response => {
+  //     // handle the response
   // })
-  // .then((data) => {
-  //   document.querySelector("map").innerHTML = data;
+  // .catch(error => {
+  //     // handle the error
   // });
 
-
-
-  async function getMarker() {
-    const response = await fetch('server/display.php');
-    console.log(response);
-    const places = await response();
+  // async function getMarker() {
+  //   const response = await fetch('../server/display.php');
+    
     
     // document.getElementById('ocean').src = URL.createObjectURL(blob); 
-  }
+  
 
-  getMarker()
-  .then(reponse => {
-      console.log('yay !');
-  })
-  .catch(error => {
-      console.log('error !');
-      console.log(error);
-  });
+  // getMarker()
+  // .then(reponse => {
+  //     console.log('yay !');
+  // })
+  // .catch(error => {
+  //     console.log('error !');
+      
+  // });
 
 
 //   fetch('./insertData.php',{
@@ -69,6 +67,16 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: "© OpenStreetMap",
 }).addTo(map);
+
+fetch("../server/display.php")
+.then((response) => {
+  return response.json();
+})
+.then((data) => {
+  data.map(place => 
+    L.marker([place.lat, place.lng]).bindPopup(`${place.name}<br>${place.adress}`).addTo(map))
+});
+
 
 let marker = L.marker([48.8534, 2.3488]).addTo(map);
 let clickMarker;
