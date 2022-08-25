@@ -10,7 +10,7 @@
 :root {
   --primary-color: #d8f7f7;
   --secondary-color: #f0ffff;
-  --alternative-color: #131d12;
+  --alternative-color: #755281;
 }
 
 h1,
@@ -45,7 +45,7 @@ header {
   top: 0;
 }
 .logo {
-  font-family: 'Rubik Dirt', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 2rem;
   text-shadow: #000;
   color: var(--alternative-color);

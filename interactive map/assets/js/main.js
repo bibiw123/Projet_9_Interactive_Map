@@ -68,6 +68,13 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap",
 }).addTo(map);
 
+let gameMarker = L.icon({
+  iconUrl: 'interactive map/assets/img/icons8-place-marker-100.png',
+  iconSize:     [50, 50], // size of the icon
+  iconAnchor:   [19, 17], // point of the icon which will correspond to marker's location  
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
+
 fetch("../server/display.php")
 .then((response) => {
   return response.json();
@@ -76,6 +83,8 @@ fetch("../server/display.php")
   data.map(place => 
     L.marker([place.lat, place.lng]).bindPopup(`${place.name}<br>${place.adress}`).addTo(map))
 });
+
+// L.marker([place.lat, place.lng], {icon: gameMarker}).addTo(map);
 
 
 let marker = L.marker([48.8534, 2.3488]).addTo(map);

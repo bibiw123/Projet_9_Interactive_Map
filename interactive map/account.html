@@ -23,6 +23,28 @@
             <p class="app_view_name">#account</p>
             <img src="" alt="">
         </section>
+        <h1>Sign in :</h1>
+        <div class="form_container">
+            <form class="row g-3" action="form.php" method="post">
+            <div class="col-auto">
+                <label for="inputName2" class="visually-hidden">*</label>
+                <input type="text" name= "user_name" class="form-control" id="inputName2" placeholder="Prénom Nom" required>
+            </div>
+            <br>
+            <div class="col-auto">
+                <label for="inputEmail2" class="visually-hidden">*</label>
+                <input type="text" name= "user_mail" class="form-control" id="inputEmail2" placeholder="email@example.com" required>
+            </div>
+            <br>
+            <div class="col-auto">
+                <label for="inputPassword2" class="visually-hidden">*</label>
+                <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password" required>
+            </div>
+            <div class="col-auto">
+                <button type="submit" name="submit" class="btn btn-primary mb-3">S'inscrire</button>
+            </div>
+            </form>
+        </div>
     </main>
 
     <!-- Footer added automatically by JS -->
