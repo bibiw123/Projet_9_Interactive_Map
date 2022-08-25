@@ -1,4 +1,12 @@
-// Add header and footer content // ------------------------------------------
+// Add head, header and footer content // ------------------------------------------
+// fetch("parts/head.html")
+//   .then((response) => {
+//     return response.text();
+//   })
+//   .then((data) => {
+//     document.querySelector("head").innerHTML = data;
+//   });
+
 fetch("parts/header.html")
   .then((response) => {
     return response.text();
@@ -24,22 +32,7 @@ fetch("parts/footer.html")
   //     // handle the error
   // });
 
-  // async function getMarker() {
-  //   const response = await fetch('../server/display.php');
-    
-    
-    // document.getElementById('ocean').src = URL.createObjectURL(blob); 
   
-
-  // getMarker()
-  // .then(reponse => {
-  //     console.log('yay !');
-  // })
-  // .catch(error => {
-  //     console.log('error !');
-      
-  // });
-
 
 //   fetch('./insertData.php',{
 //     method: 'POST',
@@ -69,19 +62,19 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 let gameMarker = L.icon({
-  iconUrl: 'interactive map/assets/img/icons8-place-marker-100.png',
-  iconSize:     [50, 50], // size of the icon
+  iconUrl: 'https://img.icons8.com/clouds/100/000000/map-pin.png',
+  iconSize:     [100, 100], // size of the icon
   iconAnchor:   [19, 17], // point of the icon which will correspond to marker's location  
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
 
-fetch("../server/display.php")
+fetch("../back/display.php")
 .then((response) => {
   return response.json();
 })
 .then((data) => {
   data.map(place => 
-    L.marker([place.lat, place.lng]).bindPopup(`${place.name}<br>${place.adress}`).addTo(map))
+    L.marker([place.lat, place.lng, {icon: gameMarker}]).bindPopup(`${place.name}<br>${place.adress}`).addTo(map))
 });
 
 // L.marker([place.lat, place.lng], {icon: gameMarker}).addTo(map);

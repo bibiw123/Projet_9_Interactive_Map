@@ -10,7 +10,7 @@
 :root {
   --primary-color: #d8f7f7;
   --secondary-color: #f0ffff;
-  --alternative-color: #755281;
+  --alternative-color: #1d1a1f;
 }
 
 h1,
@@ -45,8 +45,8 @@ header {
   top: 0;
 }
 .logo {
-  font-family: 'Lobster', cursive;
-  font-size: 2rem;
+  font-family: 'Rubik Dirt', cursive;
+  font-size: 2.5rem;
   text-shadow: #000;
   color: var(--alternative-color);
 }
@@ -77,6 +77,24 @@ nav ul li:hover {
   transition: background-color 350ms ease-in-out;
 }
 
+#account main {
+  background-image: url('../img/pexels-photo-jeu-map.jpeg');
+  background-image: cover;
+
+}
+
+fieldset {
+  /* background-image: url('../img/pexels-photo-jeu-map.jpeg');
+  background-image: cover; */
+  margin: 1em;
+  padding: 2em;
+}
+
+form {
+  position:relative;
+}
+
+
 /* Footer */
 footer {
   position: sticky;
@@ -92,14 +110,49 @@ footer {
 
 /* Content */
 .app_view {
-  padding: .5em;
+  max-width: 100%;
+  background-image: cover;
+  /* background-position: center; */
+  max-height: 35em;
+  overflow:hidden;
+  padding:0.5em;
+
 }
+
 .app_view_name {
-  /* position: absolute; */
+  position: absolute;
+  padding: .5em;
+  color: #fff;
   bottom: 0;
   right: 0;
   font-size: 5em;
 }
+input {
+  border-radius: 5px;
+}
+
+#sign_up {
+  background-color: var(--alternative-color);
+  color:#fff;
+  border-radius: 5px;
+  border: none;
+  padding:.3em .5em;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.connection {
+  background-color: var(--alternative-color);
+  color:var(--secondary-color);
+  border-radius: 5px;
+  border: none;
+  padding:.3em .5em;
+}
+
+.compte {
+  padding:1em;
+}
+
 #homepage {
   display: grid;
   grid-template-columns: 5fr 2.5fr;
@@ -121,11 +174,14 @@ footer {
   font-size: 0.75em;
 }
 #mappy {
+  height: 70vh;
+  width: 90vw;
+  margin: 1em;
   background-color: var(--alternative-color);
 }
 #map {
-  height: 65vh;
-  width: 75vw;
+  height: 68vh;
+  width: 90vw;
 }
 #starred {
   background-color: #ffffff;
@@ -150,8 +206,10 @@ footer {
   border-radius: 10px;
 }
 #account {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  
 }
+
 #settings {
   background-color: var(--secondary-color);
 }
